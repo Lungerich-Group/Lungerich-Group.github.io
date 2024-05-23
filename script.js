@@ -85,7 +85,7 @@ Qfactor2.disabled = true;
 
 
 let K = 1;
-let Kc = 10;
+let Kc = 5;
 let MinDb, MaxDb, MinRPM, MaxRPM,RPM;
 let Mac1 = Machine1.value;
 let i;
@@ -274,7 +274,7 @@ Target1.addEventListener("change", function() {
     Ru1.value='J';
     R1.value='';
     for (let option of Ru1.options) {
-      if (option.value !== 'J' && option.value !== 'KJ') {
+      if (option.value !== 'J' && option.value !== 'kJ') {
         option.style.display = 'none';
       }
       else { option.style.display = 'block'; }
@@ -373,7 +373,7 @@ buttonCal1.addEventListener("click", function() {
   else { t1 = t1; }
   Et1 = parseFloat(Etotal1.value);
   let Etu1 = Etunit1.value;
-  if (Etu1 === "KJ") { Et1 = Et1 * 1000; }
+  if (Etu1 === "kJ") { Et1 = Et1 * 1000; }
   else { Et1 = Et1; }
 
 
@@ -398,7 +398,7 @@ buttonCal1.addEventListener("click", function() {
 
     let fb1 = K * (wp1 - wv1) / (2 * Math.PI);
     t1 = Et1 / (Q1 * Ei1 * Nb1 * fb1);
-    if (Ru1.value==="m"){
+    if (Ru1.value==="min"){
       R1.value=t1/60;
     time1.value=t1/60;}
     else {R1.value = t1;
@@ -458,7 +458,7 @@ buttonCal1.addEventListener("click", function() {
     
     Et1 = Q1 * Ei1 * Nb1 * fb1 * t1;
 
-    if (Ru1.value==="KJ"){
+    if (Ru1.value==="kJ"){
       R1.value=Et1/1000;
     Etotal1.value=Et1/1000;}
     else {
@@ -473,7 +473,7 @@ buttonCal1.addEventListener("click", function() {
       return;}
   }
   Qfactor1.value=Q1;
-  if (Eiu1.value==="KJ"){Eimpact1.value=Ei1/1000;}
+  if (Eiu1.value==="kJ"){Eimpact1.value=Ei1/1000;}
   else {Eimpact1.value = Ei1;}
   if (Q1 <= 0 || Q1 >= 1) {
     alert(`Calculated Q is not within the acceptable range of 0 to 1. Please adjust the parameters accordingly.`)
@@ -489,7 +489,7 @@ buttonCal1.addEventListener("click", function() {
 
 });
 Ru1.addEventListener("change",function(){
-    if (Ru1.value ==="m") {
+    if (Ru1.value ==="min") {
       R1.value=t1/60;
       time1.value=R1.value;
       tunit1.value=Ru1.value;
@@ -498,7 +498,7 @@ Ru1.addEventListener("change",function(){
       R1.value=t1;
     time1.value=R1.value;
     tunit1.value=Ru1.value;}
-    else if (Ru1.value==="KJ"){
+    else if (Ru1.value==="kJ"){
       R1.value= Et1/1000;
     Etotal1.value=R1.value;
     Etunit1.value=Ru1.value;}
@@ -509,7 +509,7 @@ Ru1.addEventListener("change",function(){
       Etunit1.value=Ru1.value;}
   });
 Eiu1.addEventListener("change",function(){
-  if (Eiu1.value==="KJ"){Eimpact1.value= Ei1/1000;}
+  if (Eiu1.value==="kJ"){Eimpact1.value= Ei1/1000;}
   else {Eimpact1.value=Ei1;}
 });
 buttonCl1.addEventListener("click", function() {
@@ -597,7 +597,7 @@ Target2.addEventListener("change", function() {
     Ru2.value='s';
     R2.value='';
     for (let option of Ru2.options) {
-      if (option.value !== 's' && option.value !== 'm') {
+      if (option.value !== 's' && option.value !== 'min') {
         option.style.display = 'none';
       }
       else { option.style.display = 'block'; }
@@ -626,7 +626,7 @@ Target2.addEventListener("change", function() {
     Ru2.value='J';
     R2.value='';
     for (let option of Ru2.options) {
-      if (option.value !== 'J' && option.value !== 'KJ') {
+      if (option.value !== 'J' && option.value !== 'kJ') {
         option.style.display = 'none';
       }
       else { option.style.display = 'block'; }
@@ -695,10 +695,10 @@ buttonCal2.addEventListener("click", function() {
   } else { Hv2 = Hv2; }
    t2 = parseFloat(time2.value);
   let tu2 = tunit2.value;
-  if (tu2 === "m") { t2 = t2 * 60; }
+  if (tu2 === "min") { t2 = t2 * 60; }
   else { t2 = t2; }
   Et2 = parseFloat(Etotal2.value);
-  if (Etunit2.value === "KJ") {
+  if (Etunit2.value === "kJ") {
     Et2 = Et2 * 1000;
   }
 
@@ -712,14 +712,14 @@ buttonCal2.addEventListener("click", function() {
     Q2 = 1 - Math.pow(Nv, e);
 
     
-    R2.value = Math.pow((Et2 * 2 / (Q2 * Mb2 * Nb2 * t2 * Kc * Math.PI ** 2 * Dv2 ** 2)), 1 / 3);
+    R2.value = Math.pow((Et2 / (Q2 * Mb2 * Nb2 * t2 * Kc * Math.PI ** 2 * Hv2 ** 2)), 1 / 3); /* */
     f2.value=R2.value;
-    Ei2 = 0.5 * Mb2 * (2 * Math.PI * R2.value * 0.5 * Dv2) ** 2;
+    Ei2 = 0.5 * Mb2 * (2 * Math.PI * R2.value * 0.5 * Hv2) ** 2;
 
   }
   else if (Target2.value === "Time") {
 
-    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * 0.5 * Dv2) ** 2;
+    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * 0.5 * Hv2) ** 2;
 
     let Nbv = Math.PI * Dv2 ** 2 * Hv2 / 4 * Db2 ** (-3);
     let Nv = Nb2 / Nbv;
@@ -730,8 +730,8 @@ buttonCal2.addEventListener("click", function() {
 
     
 
-    t2 = Et2 / (Q2 * Ei2 * Nb2 * K * f2.value * Kc);
-    if (Ru2.value==="m"){
+    t2 = Et2 / (Q2 *2* Ei2 * Nb2 * K * f2.value * Kc);
+    if (Ru2.value==="min"){
       R2.value=t2/60;
     time2.value=t2/60;
     }
@@ -743,7 +743,7 @@ buttonCal2.addEventListener("click", function() {
 
   }
   else {
-    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * 0.5 * Dv2) ** 2;
+    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * 0.5 * Hv2) ** 2;
 
     let Nbv = Math.PI * Dv2 ** 2 * Hv2 / 4 * Db2 ** (-3);
     let Nv = Nb2 / Nbv;
@@ -754,8 +754,8 @@ buttonCal2.addEventListener("click", function() {
 
     
 
-    Et2 = Q2 * Ei2 * Nb2 * K * f2.value * t2 * Kc;
-    if (Ru2.value==="KJ"){
+    Et2 = Q2 * 2* Ei2 * Nb2 * K * f2.value * t2 * Kc;
+    if (Ru2.value==="kJ"){
       R2.value=Et2/1000;
     Etotal2.value=Et2/1000;
     }
@@ -766,7 +766,7 @@ buttonCal2.addEventListener("click", function() {
   
   Qfactor2.value=Q2;
   
-  if (Eiu2.value==="KJ"){Eimpact2.value=Ei2/1000;}
+  if (Eiu2.value==="kJ"){Eimpact2.value=Ei2/1000;}
   else {Eimpact2.value = Ei2;}
   
   if (Q2 <= 0 || Q2 >= 1) {
@@ -778,7 +778,7 @@ buttonCal2.addEventListener("click", function() {
   
 });
 Ru2.addEventListener("change",function(){
-  if (Ru2.value ==="m") { 
+  if (Ru2.value ==="min") { 
     R2.value=t2/60; 
     time2.value=R2.value;
   tunit2.value=Ru2.value;}
@@ -786,7 +786,7 @@ Ru2.addEventListener("change",function(){
     R2.value=t2;
   time2.value=R2.value;
   tunit2.value=Ru2.value;}
-  else if (Ru2.value==="KJ"){
+  else if (Ru2.value==="kJ"){
     R2.value= Et2/1000;
     Etotal2.value=R2.value;
     Etunit2.value=Ru2.value;
@@ -798,7 +798,7 @@ Ru2.addEventListener("change",function(){
   
 });
 Eiu2.addEventListener("change",function(){
-  if (Eiu2.value==="KJ"){Eimpact2.value= Ei2/1000;}
+  if (Eiu2.value==="kJ"){Eimpact2.value= Ei2/1000;}
   else {Eimpact2.value=Ei2;}
 });
 buttonCl2.addEventListener("click", function() {
