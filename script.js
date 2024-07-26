@@ -13,6 +13,8 @@ let Hvial1 = document.getElementById("Hv1")
 let Hvunit1 = document.getElementById("Hvu1")
 let Hvial2 = document.getElementById("Hv2")
 let Hvunit2 = document.getElementById("Hvu2")
+let Avial2 = document.getElementById("Av2")
+let Avunit2 = document.getElementById("Avu2")
 
 let Dball1 = document.getElementById("Db1");
 let Dbunit1 = document.getElementById("Dbu1");
@@ -26,7 +28,6 @@ let Mbunit2 = document.getElementById("Mbu2");
 
 let RPerM1 = document.getElementById("RPM1");
 let f2 = document.getElementById("f2");
-let fu2 = document.getElementById("fu2");
 
 let time1 = document.getElementById("t1");
 let tunit1 = document.getElementById("tu1");
@@ -92,9 +93,9 @@ let i;
 let Et1,t1,Et2,t2,Q1,Q2,CDb, Ei1, Ei2;
 
 const header1 = 
-  ['Machine', 'Effective diameter of main disk','unit','Diameter of vial','unit','Transmission ratio','height of vial','unit', 'Diameter of a ball','unit','Mass of ball','unit','number of ball','RPM','time','unit','cumulative E','unit','impact E','unit','Q factor'];
+  ['Machine', 'Effective diameter of main disk','unit','Diameter of jar','unit','Transmission ratio','height of jar','unit', 'Diameter of a ball','unit','Mass of ball','unit','number of ball','RPM','time','unit','cumulative E','unit','impact E','unit','Q factor'];
 
-const header2 =['Diameter of vial','unit','height of vial','unit', 'Diameter of a ball','unit','Mass of ball','unit','number of ball','Frequency','unit','time','unit','cumulative E','unit','impact E','unit','Q factor'];
+const header2 =['Diameter of jar','unit','height of jar','unit','Amplitude of jar','unit', 'Diameter of a ball','unit','Mass of ball','unit','number of ball','Frequency','time','unit','cumulative E','unit','impact E','unit','Q factor'];
 
 let data1=[header1];
 let data2=[header2];
@@ -132,14 +133,14 @@ function updateDp() {
 }
 function Record1() {
 
-  const record = [Machine1.value,Dplate1.value,Dpunit1.value,Dvial1.value,Dvunit1.value, i,Hvial1.value,Hvunit1.value,Dball1.value,Dbunit1.value,Mball1.value,Mbunit1.value,Nball1.value,RPerM1.value,time1.value,tunit1.value,Etotal1.value,Etunit1.value,Eimpact1.value,Eiu1.value,Qfactor1.value];
+  const record = [Machine1.value,Dplate1.value,Dpunit1.value,Dvial1.value,Dvunit1.value,i,Hvial1.value,Hvunit1.value,Dball1.value,Dbunit1.value,Mball1.value,Mbunit1.value,Nball1.value,RPerM1.value,time1.value,tunit1.value,Etotal1.value,Etunit1.value,Eimpact1.value,Eiu1.value,Qfactor1.value];
 
   data1.push(record);
 }
 function saveToExcel1() {
 
   if (parseInt(tot1.textContent)===0){
-   data=[header1,[Machine1.value, Dplate1.value,Dpunit1.value , Dvial1.value,Dvunit1.value , Hvial1.value,Hvunit1.value , Dball1.value,Dbunit1.value,Mball1.value,Mbunit1.value,Nball1.value ,RPerM1.value , time1.value,tunit1.value ,Etotal1.value,Etunit1.value,Eimpact1.value,Eiu1.value,Qfactor1.value]];}
+   data=[header1,[Machine1.value, Dplate1.value,Dpunit1.value , Dvial1.value,Dvunit1.value ,i, Hvial1.value,Hvunit1.value , Dball1.value,Dbunit1.value,Mball1.value,Mbunit1.value,Nball1.value ,RPerM1.value , time1.value,tunit1.value ,Etotal1.value,Etunit1.value,Eimpact1.value,Eiu1.value,Qfactor1.value]];}
   else { data=data1;}
 
 
@@ -164,13 +165,13 @@ function saveToExcel1() {
   );
 }
 function Record2(){
-const record = [Dvial2.value,Dvunit2.value,Hvial2.value,Hvunit2.value,Dball2.value,Dbunit2.value,Mball2.value,Mbunit2.value,Nball2.value,f2.value,fu2.value,time2.value,tunit2.value,Etotal2.value,Etunit2.value,Eimpact2.value,Eiu2.value,Qfactor2.value];
+const record = [Dvial2.value,Dvunit2.value,Hvial2.value,Hvunit2.value,Avial2.value,Avunit2.value,Dball2.value,Dbunit2.value,Mball2.value,Mbunit2.value,Nball2.value,f2.value,time2.value,tunit2.value,Etotal2.value,Etunit2.value,Eimpact2.value,Eiu2.value,Qfactor2.value];
 
   data2.push(record); 
 }
 function saveToExcel2() {
     if (parseInt(tot2.textContent)===0){
-    data=[header1,[Dvial2.value,Dvunit2.value,Hvial2.value,Hvunit2.value,Dball2.value,Dbunit2.value,Mball2.value,Mbunit2.value,Nball2.value,f2.value,fu2.value,time2.value,tunit2.value,Etotal2.value,Etunit2.value,Eimpact2.value,Eiu2.value,Qfactor2.value]];}
+    data=[header2,[Dvial2.value,Dvunit2.value,Hvial2.value,Hvunit2.value,Avial2.value,Avunit2.value,Dball2.value,Dbunit2.value,Mball2.value,Mbunit2.value,Nball2.value,f2.value,time2.value,tunit2.value,Etotal2.value,Etunit2.value,Eimpact2.value,Eiu2.value,Qfactor2.value]];}
   else { data=data2;}
   // Create a new workbook
   const wb = XLSX.utils.book_new();
@@ -279,10 +280,10 @@ Target1.addEventListener("change", function() {
       }
       else { option.style.display = 'block'; }
     }
-     document.getElementById("RPM1G").style.display = "block";
+    document.getElementById("RPM1G").style.display = "block";
     document.getElementById("t1G").style.display = "block";
     document.getElementById("Et1G").style.display = "none";
-     document.getElementById("RPM1GB").style.display = "block";
+    document.getElementById("RPM1GB").style.display = "block";
     document.getElementById("t1GB").style.display = "block";
     document.getElementById("Et1GB").style.display = "none";
     
@@ -460,7 +461,7 @@ buttonCal1.addEventListener("click", function() {
 
     if (Ru1.value==="kJ"){
       R1.value=Et1/1000;
-    Etotal1.value=Et1/1000;}
+      Etotal1.value=Et1/1000;}
     else {
       Etotal1.value=Et1;
       R1.value = Et1;}
@@ -484,7 +485,7 @@ buttonCal1.addEventListener("click", function() {
     return;
   }
 
-  if (cur1.textContent = tot1.textContent){
+  if (cur1.textContent === tot1.textContent){
   cur1.textContent= parseInt(cur1.textContent) +1;}
 
 });
@@ -682,6 +683,8 @@ buttonCal2.addEventListener("click", function() {
   let Dbu2 = Dbunit2.value;
   let Hv2 = parseFloat(Hvial2.value);
   let Hvu2 = Hvunit2.value;
+  let Av2 = parseFloat(Avial2.value);
+  let Avu2 = Avunit2.value;
   let Nb2 = parseFloat(Nball2.value);
   if (Dbu2 === "mm") {
     Db2 = Db2 / 1000;
@@ -693,6 +696,11 @@ buttonCal2.addEventListener("click", function() {
   } else if (Hvu2 === "cm") {
     Hv2 = Hv2 / 100;
   } else { Hv2 = Hv2; }
+  if (Avu2 === "mm") {
+    Av2 = Av2 / 1000;
+  } else if (Dbu2 === "cm") {
+    Av2 = Av2 / 100;
+  } else { Av2 = Av2; }
    t2 = parseFloat(time2.value);
   let tu2 = tunit2.value;
   if (tu2 === "min") { t2 = t2 * 60; }
@@ -712,14 +720,14 @@ buttonCal2.addEventListener("click", function() {
     Q2 = 1 - Math.pow(Nv, e);
 
     
-    R2.value = Math.pow((Et2 / (Q2 * Mb2 * Nb2 * t2 * Kc * Math.PI ** 2 * Hv2 ** 2)), 1 / 3); /* */
+    R2.value = Math.pow((Et2 / (Q2 * Mb2 * Nb2 * t2 * Kc * Math.PI ** 2 * (2*Av2) ** 2)), 1 / 3); /* */
     f2.value=R2.value;
-    Ei2 = 0.5 * Mb2 * (2 * Math.PI * R2.value * 0.5 * Hv2) ** 2;
+    Ei2 = 0.5 * Mb2 * (2 * Math.PI * R2.value * Av2) ** 2;
 
   }
   else if (Target2.value === "Time") {
 
-    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * 0.5 * Hv2) ** 2;
+    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * Av2) ** 2;
 
     let Nbv = Math.PI * Dv2 ** 2 * Hv2 / 4 * Db2 ** (-3);
     let Nv = Nb2 / Nbv;
@@ -743,7 +751,7 @@ buttonCal2.addEventListener("click", function() {
 
   }
   else {
-    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * 0.5 * Hv2) ** 2;
+    Ei2 = 0.5 * Mb2 * (2 * Math.PI * f2.value * Av2) ** 2;
 
     let Nbv = Math.PI * Dv2 ** 2 * Hv2 / 4 * Db2 ** (-3);
     let Nv = Nb2 / Nbv;
@@ -757,7 +765,7 @@ buttonCal2.addEventListener("click", function() {
     Et2 = Q2 * 2* Ei2 * Nb2 * K * f2.value * t2 * Kc;
     if (Ru2.value==="kJ"){
       R2.value=Et2/1000;
-    Etotal2.value=Et2/1000;
+      Etotal2.value=Et2/1000;
     }
     else {R2.value = Et2;
          Etotal2.value = Et2;}
@@ -807,6 +815,8 @@ buttonCl2.addEventListener("click", function() {
   Dvunit2.value = "mm";
   Hvial2.value = "";
   Hvunit2.value = "mm";
+  Avial2.value = "";
+  Avunit2.value = "mm";
   Dball2.value = "";
   Dbunit2.value = "mm";
   Mball2.value = "";
@@ -822,6 +832,10 @@ buttonCl2.addEventListener("click", function() {
   document.getElementById("f2G").style.display = "block";
   document.getElementById("t2G").style.display = "block";
   document.getElementById("Et2G").style.display = "block";
+  document.getElementById("f2GB").style.display = "block";
+  document.getElementById("t2GB").style.display = "block";
+  document.getElementById("Et2GB").style.display = "block";
+  
   f2.value = "";
   time2.value = "";
   tunit2.value = "s";
@@ -835,8 +849,6 @@ buttonCl2.addEventListener("click", function() {
   
 });
   
-
-
 add2.addEventListener('click', function() {
   if (cur2.textContent !== tot2.textContent){
     tot2.textContent = cur2.textContent;
@@ -850,13 +862,7 @@ Remove2.addEventListener('click', function() {
   data2 = [header2];
 });
 
-
 Save2.addEventListener('click', saveToExcel2);
-
-
-
-
-
 
 
 

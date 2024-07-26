@@ -275,7 +275,8 @@
 
         </div>
 
-        <p>Add #0 of calculations added to the data table.</p>
+        <p>Add #: Number of calculations added to the data table.          
+        </p>
 
 
       </div>
@@ -313,7 +314,7 @@
         <p>For “theory to practice”, the commercially available mill is taken to simulate kinematics of a
           one-dimension
           mill. E<sub>impact</sub> and cumulative energy E<sub>total</sub> are calculated based on known parameters:
-          Diameter of the jar, length of the jar, diameter of the ball, mass of the ball, total number of balls,
+          Diameter of the jar, length of the jar, amplitude of the jar, diameter of the ball, mass of the ball, total number of balls,
           frequency, and time.
         </p>
       </div>
@@ -340,6 +341,9 @@
         <label>
           Length of jar :
         </label><br>
+        <label>
+          Amplitude of jar :
+        </label><br>
 
         <label>
           Diameter of a ball :
@@ -347,8 +351,6 @@
         <label>
           Mass of a ball :
         </label><br>
-
-
         <label>
           Total number of balls :
         </label><br>
@@ -381,6 +383,13 @@
             <option>cm</option>
             <option>m</option>
           </select>
+        </label><br>
+
+        <input type="number" id=Av2 min="0" required><select id="Avu2">
+          <option>mm</option>
+          <option>cm</option>
+          <option>m</option>
+        </select>
         </label><br>
 
         <label>
@@ -490,18 +499,12 @@
         <button id="Save2" class="s-button"> Save </button>
         <button id="Remove2" class="s-button"> Remove </button>
 
-        <p>Add #0 of calculations added to the data table.
+        <p>Add #: Number of calculations added to the data table.
         <p>
 
 
       </div>
     </div>
-
-
-
-
-
-
 
 
 
@@ -526,7 +529,7 @@
     <p>This web page was constructed and is maintained by <a target="blank"
         href="https://scholar.google.com/citations?hl=de&user=GPx0UU4AAAAJ">Sol Lee</a>. If you have any trouble
       please
-      contact. sol.lee.rk@gamil.com</p>
+      contact. sol.lee.rk@gmail.com</p>
 
 
   </div>
