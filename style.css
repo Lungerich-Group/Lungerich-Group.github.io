@@ -307,6 +307,7 @@ h1 {
 }
 
 #imageContainer2 {
+  padding: 20px 0px 20px 0px;
   grid-column: 1;
   grid-row: span 2;
   width: 350px;
@@ -318,7 +319,7 @@ h1 {
 
   grid-column: 2;
   grid-row: 2;
-  padding: 0px 0px 0px 0px;
+  padding: 20px 0px 20px 0px;
   width: 550px;
   background-color: #CEE3F6;
   margin: 0px 0px 0px 0px;
