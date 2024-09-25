@@ -370,7 +370,7 @@ buttonCal1.addEventListener("click", function() {
   let Nb1 = parseFloat(Nball1.value);
   let t1 = parseFloat(time1.value);
   let tu1 = tunit1.value;
-  if (tu1 === "m") { t1 = t1 * 60; }
+  if (tu1 === "min") { t1 = t1 * 60; }
   else { t1 = t1; }
   Et1 = parseFloat(Etotal1.value);
   let Etu1 = Etunit1.value;
