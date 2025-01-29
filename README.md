@@ -1,4 +1,4 @@
-## Welcome to Lungerich-Group tool !
+## Welcome to Lungerich-Group tools !
 Discover our Calculators below.
 <br>
 
