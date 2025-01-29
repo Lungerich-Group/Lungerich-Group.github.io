@@ -3,8 +3,6 @@ Discover the Calculators below.
 <br>
 
 - <a target="blank" href="https://lungerich-group.github.io/Ball-mill-calculator//">Ball-Mill Calculator</a>
-<br>
-
 - <a target="blank" href="https://jongseong94.github.io/E-beam-interaction-calculator/">E-beam Interaction Calculator</a>
 <br>
 
