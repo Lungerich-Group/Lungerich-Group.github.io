@@ -2,9 +2,9 @@
 Discover the Calculators below.
 <br>
 
-1.<a target="blank" href="https://lungerich-group.github.io/Ball-mill-calculator//">Ball-Mill Calculator</a>.
+1.<a target="blank" href="https://lungerich-group.github.io/Ball-mill-calculator//"> Ball-Mill Calculator</a>
 <br>
-2.<a target="blank" href="https://jongseong94.github.io/E-beam-interaction-calculator/">E-beam Interaction Calculator</a>.
+2.<a target="blank" href="https://jongseong94.github.io/E-beam-interaction-calculator/"> E-beam Interaction Calculator</a>
 <br>
 
 This tool is constantly evolving and will be updated with even more features in the future.
