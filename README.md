@@ -1,5 +1,5 @@
 ## Welcome to Lungerich-Group tool !
-Discover the Calculators
+Discover the Calculators below.
 <br>
 
 1.<a target="blank" href="https://lungerich-group.github.io/Ball-mill-calculator//">Ball-Mill Calculator</a>.
