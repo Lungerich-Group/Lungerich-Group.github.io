@@ -14,7 +14,7 @@ Thank you for visiting and exploring our work!<br>
 
 <hr>
 
-<p style="font-size: 10px; margin-top: 10px; line-height: 1.5;">
+<p style="font-size: 12px; margin-top: 10px; line-height: 1.5;">
 <a target="blank" href="https://www.lungerichlab.com/">Lungerich Group</a><br>
 <a target="blank" href="https://scholar.google.com/citations?user=SqZM0A4AAAAJ&amp;hl=de">Google Scholar</a>
 </p>
