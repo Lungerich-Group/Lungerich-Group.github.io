@@ -12,7 +12,7 @@ Stay tuned for additional content related to our work and other exciting develop
 
 Thank you for visiting and exploring our work!<br>
 
-<hr style="border-top: 1px">
+<hr style="border-top: 0.5px solid #ccc;">
 
 <p style="font-size: 14px; margin-top: 5px; line-height: 1.5;">
 <a target="blank" href="https://www.lungerichlab.com/">Lungerich Group</a><br>
