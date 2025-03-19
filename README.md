@@ -12,9 +12,9 @@ Stay tuned for additional content related to our work and other exciting develop
 
 Thank you for visiting and exploring our work!<br>
 
-<hr style="border-top: 0.5px solid #ccc;">
+<hr style="height: 0.5px;">
 
-<p style="font-size: 14px; margin-top: 5px; line-height: 1.5;">
+<p style="font-size: 14px; line-height: 1.5;">
 <a target="blank" href="https://www.lungerichlab.com/">Lungerich Group</a><br>
 <a target="blank" href="https://scholar.google.com/citations?user=SqZM0A4AAAAJ&amp;hl=de">Google Scholar</a>
 </p>
