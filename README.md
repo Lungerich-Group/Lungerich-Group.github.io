@@ -11,3 +11,6 @@ These tools are constantly evolving and will be updated with more features in th
 Stay tuned for additional content related to our work and other exciting developments!
 
 Thank you for visiting and exploring our work!
+
+- <a target="blank" href="https://www.lungerichlab.com/">Lungerich Group</a>
+- <a target="blank" href="https://scholar.google.com/citations?user=SqZM0A4AAAAJ&amp;hl=de">Google Scholar</a>
